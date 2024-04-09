@@ -3,7 +3,7 @@
 A basic Flask app
 """
 from flask_babel import Babel
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 class Config(object):
@@ -37,4 +37,4 @@ def get_locale():
 
 
 if __name__ == "__main__":
-    app.run(port="5000", host="0.0.0.0", debug=True)
+    app.run(port=5000, host="0.0.0.0", debug=True)
