@@ -52,7 +52,7 @@ def index() -> str:
     """
     Route to index
     """
-    return render_template('2-index.html')
+    return render_template('5-index.html')
 
 
 @babel.localeselector
