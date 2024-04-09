@@ -32,9 +32,9 @@ def get_user():
     """
     returns a user dictionary or None if the ID cannot be found
     """
-    login_id = request.args.get('login_as')
-    if login_id:
-        return users.get(int(login_id))
+    id = request.args.get('login_as', None)
+    if id is not None and int(id) in users.keys():
+        return users.get(int(id))
     return None
 
 
@@ -62,7 +62,6 @@ def get_locale():
     """
     locale = request.args.get('locale')
     if locale in app.config['LANGUAGES']:
-        print(locale)
         return locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
